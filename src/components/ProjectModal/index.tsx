@@ -129,9 +129,19 @@ export default function ProjectModal({
                                     <Typography variant="body1" sx={{ marginBottom: '10px' }}>
                                         <strong>Local:</strong> {project.location}
                                     </Typography>
-                                    <Typography variant="body1" sx={{ marginBottom: '10px' }}>
+                                    {
+                                        project.builtArea && (
+                                            <Typography variant="body1" sx={{ marginBottom: '10px' }}>
+                                                <strong>Área Construída:</strong> {project.builtArea}
+                                            </Typography>
+                                        )
+                                    }
+
+                                    {/*            
+                                                             <Typography variant="body1" sx={{ marginBottom: '10px' }}>
                                         <strong>Previsão de entrega:</strong> {project.deliveryDate}
-                                    </Typography>
+                                    </Typography> 
+                                    */}
                                     <Typography variant="body1">
                                         <strong>Obra:</strong> {project.description}
                                     </Typography>

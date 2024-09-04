@@ -9,21 +9,19 @@ const footerInfo = {
     },
     email: {
         title: "E-mail",
-        content: "mfempreendimentos@e-mail.com",
-        link: "mailto:mfempreendimentos@e-mail.com"
+        content: "mfempreendimentos.eng@gmail.com",
+        link: "mailto:mfempreendimentos.eng@gmail.com"
     },
     phone: {
         title: "Telefone",
         content: [
-            "(45) 9 9999-999",
-            "(45) 3000-0000"
+            "(45) 99129-1013",
         ]
     },
     social: {
         title: "Redes sociais",
         links: [
-            { name: "Instagram", url: "https://instagram.com" },
-            { name: "Facebook", url: "https://facebook.com" }
+            { name: "@mf.empreendimentos", url: "https://www.instagram.com/mf.empreendimentos/" },
         ]
     }
 };
@@ -44,7 +42,7 @@ export default function Footer() {
                         {footerInfo.address.content}
                     </Typography>
                 </Grid>
-                <Grid item xs={12} sm={6} md={2.4}>
+                <Grid item xs={12} sm={6} md={4.4}>
                     <Typography textAlign={{
                         xs: 'center',
                         sm: 'left'
@@ -53,7 +51,7 @@ export default function Footer() {
                         xs: 'center',
                         sm: 'left'
                     }} variant="body1">
-                        <Link sx={{ textDecoration: 'none', color: '#252626' }} href={footerInfo.email.link}>{footerInfo.email.content}</Link>
+                        <Link target='_blank' sx={{ textDecoration: 'none', color: '#252626' }} href={footerInfo.email.link}>{footerInfo.email.content}</Link>
                     </Typography>
                 </Grid>
                 <Grid item xs={12} sm={6} md={2}>
