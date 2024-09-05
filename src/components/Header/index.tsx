@@ -9,12 +9,13 @@ import logo from '../../assets/images/logo.svg';
 
 import { RefObject } from 'react';
 
-interface HeaderProps {
+type HeaderProps = {
     aboutUsRef: RefObject<HTMLElement>;
     projectsRef: RefObject<HTMLElement>;
+    houseProjectsRef: RefObject<HTMLElement>;
 }
 
-export default function Header({ aboutUsRef, projectsRef }: HeaderProps) {
+export default function Header({ aboutUsRef, projectsRef, houseProjectsRef }: HeaderProps) {
     const [drawerOpen, setDrawerOpen] = useState(false);
 
     const toggleDrawer = (open: boolean | ((prevState: boolean) => boolean)) => (event: any) => {
@@ -61,9 +62,13 @@ export default function Header({ aboutUsRef, projectsRef }: HeaderProps) {
                     <ListItem button onClick={() => scrollToRef(aboutUsRef)}>
                         <ListItemText primary="Sobre nós" />
                     </ListItem>
+                    <ListItem button onClick={() => scrollToRef(houseProjectsRef)}>
+                        <ListItemText primary="Incorporação" />
+                    </ListItem>
                     <ListItem button onClick={() => scrollToRef(projectsRef)}>
                         <ListItemText primary="Obras" />
                     </ListItem>
+
                 </List>
             </Box>
             <Divider sx={{ borderColor: 'rgba(255, 255, 255, 0.1)' }} />
@@ -74,7 +79,7 @@ export default function Header({ aboutUsRef, projectsRef }: HeaderProps) {
                 <IconButton sx={{ color: 'white' }}>
                     <img src={instagram} alt="Instagram" style={{ width: 24, height: 24 }} />
                 </IconButton>
-                <IconButton sx={{ color: 'white' }}>
+                <IconButton href='https://api.whatsapp.com/send?phone=5545991291013' target="_blank" sx={{ color: 'white' }}>
                     <img src={whatsapp} alt="Whatsapp" style={{ width: 24, height: 24 }} />
                 </IconButton>
             </Box>
@@ -106,6 +111,9 @@ export default function Header({ aboutUsRef, projectsRef }: HeaderProps) {
                     <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 4 }}>
                         <Button onClick={() => scrollToRef(aboutUsRef)} sx={{ color: 'white', fontFamily: 'Inter', fontSize: '1rem', fontWeight: 400, textTransform: 'none' }}>
                             Sobre nós
+                        </Button>
+                        <Button onClick={() => scrollToRef(houseProjectsRef)} sx={{ color: 'white', fontFamily: 'Inter', fontSize: '1rem', fontWeight: 400, textTransform: 'none' }}>
+                            Incorporação
                         </Button>
                         <Button onClick={() => scrollToRef(projectsRef)} sx={{ color: 'white', fontFamily: 'Inter', fontSize: '1rem', fontWeight: 400, textTransform: 'none' }}>
                             Obras
@@ -175,6 +183,9 @@ export default function Header({ aboutUsRef, projectsRef }: HeaderProps) {
                                 borderRadius: '0px',
                                 boxShadow: 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px'
                             }}
+                            href='https://api.whatsapp.com/send?phone=5545991291013'
+                            target="_blank"
+
                         >
                             <Box
                                 sx={{

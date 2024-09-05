@@ -14,8 +14,8 @@ function App() {
   const houseProjectsRef = useRef(null);
   return (
     <>
-      <Header aboutUsRef={aboutUsRef} projectsRef={projectsRef} />
-      <HeroBanner />
+      <Header aboutUsRef={aboutUsRef} projectsRef={projectsRef} houseProjectsRef={houseProjectsRef} />
+      <HeroBanner projectsRef={projectsRef} />
       <div ref={aboutUsRef}>
         <AboutUs />
       </div>

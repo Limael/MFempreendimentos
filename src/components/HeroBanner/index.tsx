@@ -1,7 +1,14 @@
 import { Box, Typography, Button, Divider } from '@mui/material';
 import banner_background from '../../assets/images/banner-image.png';
 import right_arrow from '../../assets/images/right-arrow.svg';
-export default function HeroBanner() {
+import { scrollToRef } from '../../utils/scrollToRef';
+import { RefObject } from 'react';
+
+type HeroBannerProps = {
+    projectsRef: RefObject<HTMLElement>;
+}
+
+export default function HeroBanner({ projectsRef }: HeroBannerProps) {
     return (
         <Box
             sx={{
@@ -42,6 +49,7 @@ export default function HeroBanner() {
 
 
                 <Button
+                    onClick={() => scrollToRef(projectsRef)}
                     sx={{
                         background: 'rgba(37, 38, 38, 0.75)',
                         backdropFilter: 'blur(16px)',

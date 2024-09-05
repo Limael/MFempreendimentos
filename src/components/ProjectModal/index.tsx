@@ -4,6 +4,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { Project } from '../../types/Projects';
 import CustomLeftArrow from '../Projects/components/CustomLeftArrow';
+import { useState, useEffect } from 'react';
 import CustomRightArrow from '../Projects/components/CustomRightArrow ';
 
 interface ProjectModalProps {
@@ -25,12 +26,23 @@ export default function ProjectModal({
     open,
     project,
     handleClose,
-    projects,
-    onSelectProject,
-}: ProjectModalProps) {
 
-    const handleSelect = (index: number) => {
-        onSelectProject(index);
+}: ProjectModalProps) {
+    const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+    useEffect(() => {
+        if (project && project.images) {
+            // Definir a primeira imagem como selecionada ao abrir o modal
+            const firstImageKey = Object.keys(project.images)[0];
+            setSelectedImage(project.images[firstImageKey].default);
+        }
+    }, [project]);
+
+    // Função para definir a imagem selecionada no carrossel
+    const handleImageSelect = (imageKey: string) => {
+        if (project && project.images) {
+            setSelectedImage(project.images[imageKey].default);
+        }
     };
 
     return (
@@ -38,7 +50,11 @@ export default function ProjectModal({
             <DialogContent sx={{ p: 0, display: 'flex', justifyContent: 'center', alignItems: 'stretch', backgroundColor: '#111', color: 'white' }}>
                 {project && (
                     <Grid container spacing={2} sx={{ padding: '0px' }}>
-                        <Grid item xs={12} md={6}
+                        {/* Informações sobre o projeto */}
+                        <Grid
+                            item
+                            xs={12}
+                            md={6}
                             sx={{
                                 background: 'rgba(37, 38, 38, 0.60)',
                                 alignItems: 'center',
@@ -48,17 +64,13 @@ export default function ProjectModal({
                             }}
                         >
                             <Box
-                                pt={{
-                                    xs: 4,
-                                    md: 0
-                                }}
+                                pt={{ xs: 4, md: 0 }}
                                 sx={{
                                     display: 'flex',
                                     flexDirection: 'column',
                                     alignItems: 'flex-start',
-                                    justifyItems: 'center'
+                                    justifyItems: 'center',
                                 }}
-
                             >
                                 <Button
                                     sx={{
@@ -70,57 +82,28 @@ export default function ProjectModal({
                                         borderRadius: '0px',
                                         boxShadow: 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px',
                                         mb: 4,
-                                        ml: {
-                                            xs: 4,
-                                            md: 0
-                                        }
+                                        ml: { xs: 4, md: 0 },
                                     }}
                                     onClick={handleClose}
                                 >
-                                    <Box
-                                        sx={{
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                            width: 32,
-                                            py: 2,
-                                        }}
-                                    >
+                                    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 32, py: 2 }}>
                                         <ArrowBackIosNewIcon sx={{ color: '#fff' }} />
                                     </Box>
-                                    <Divider
-                                        orientation="vertical"
-                                        flexItem
-                                        sx={{ background: 'white' }}
-                                    />
-                                    <Box
-                                        sx={{
-                                            color: 'white',
-                                            fontFamily: 'Inter',
-                                            fontSize: '14px',
-                                            fontWeight: 300,
-                                            textTransform: 'none',
-                                            px: 1,
-                                        }}
-                                    >
+                                    <Divider orientation="vertical" flexItem sx={{ background: 'white' }} />
+                                    <Box sx={{ color: 'white', fontFamily: 'Inter', fontSize: '14px', fontWeight: 300, textTransform: 'none', px: 1 }}>
                                         Voltar
                                     </Box>
                                 </Button>
 
                                 <Box
                                     sx={{
-                                        width: {
-                                            xs: '50%',
-                                            md: '60%'
-                                        },
+                                        width: { xs: '50%', md: '60%' },
                                         maxWidth: '364px',
                                         padding: '64px',
                                         background: '#373838',
                                         boxShadow: '0px 4px 16px 0px rgba(0, 0, 0, 0.32)',
                                         mb: 4,
-                                        alignSelf: {
-                                            xs: 'center',
-                                        }
+                                        alignSelf: { xs: 'center' },
                                     }}
                                 >
                                     <Typography variant="h5" sx={{ fontWeight: 'bold', marginBottom: '10px' }}>
@@ -129,19 +112,11 @@ export default function ProjectModal({
                                     <Typography variant="body1" sx={{ marginBottom: '10px' }}>
                                         <strong>Local:</strong> {project.location}
                                     </Typography>
-                                    {
-                                        project.builtArea && (
-                                            <Typography variant="body1" sx={{ marginBottom: '10px' }}>
-                                                <strong>Área Construída:</strong> {project.builtArea}
-                                            </Typography>
-                                        )
-                                    }
-
-                                    {/*            
-                                                             <Typography variant="body1" sx={{ marginBottom: '10px' }}>
-                                        <strong>Previsão de entrega:</strong> {project.deliveryDate}
-                                    </Typography> 
-                                    */}
+                                    {project.builtArea && (
+                                        <Typography variant="body1" sx={{ marginBottom: '10px' }}>
+                                            <strong>Área Construída:</strong> {project.builtArea}
+                                        </Typography>
+                                    )}
                                     <Typography variant="body1">
                                         <strong>Obra:</strong> {project.description}
                                     </Typography>
@@ -149,27 +124,29 @@ export default function ProjectModal({
                             </Box>
                         </Grid>
 
-
-                        <Grid item xs={12} md={6} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-
-
+                        {/* Carrossel de imagens */}
+                        <Grid item xs={12} md={6}
+                            sx={{
+                                display: 'flex',
+                                justifyContent: 'flex-start',
+                                alignItems: 'flex-start',
+                                flexDirection: 'column',
+                                pl: '0px!important',
+                            }}>
                             <Box
                                 component={'img'}
-                                src={project.image}
+                                src={selectedImage || project.image} // Mostra a imagem selecionada ou a imagem principal
                                 alt={project.title}
                                 sx={{
-                                    width: {
-                                        xs: '80%',
-                                        md: '100%'
-                                    },
+                                    width: { xs: '100%', md: '100%' },
+                                    height: '85%',
                                     maxHeight: '687px',
-                                    borderRadius: '8px'
+                                    minHeight: '85%',
                                 }}
                                 draggable={false}
                             />
 
-
-                            <Box sx={{ width: '100%', mt: 2, }}>
+                            <Box sx={{ width: '100%', mt: 2 }}>
                                 <Carousel
                                     responsive={responsive}
                                     customLeftArrow={<CustomLeftArrow />}
@@ -180,29 +157,33 @@ export default function ProjectModal({
                                     ssr
                                     keyBoardControl
                                 >
-                                    {projects.map((item, index) => (
-                                        <Box
-                                            key={index}
-                                            onClick={() => handleSelect(index)}
-                                            sx={{
-                                                display: 'flex',
-                                                justifyContent: 'center',
-                                                '&:hover': {
-                                                    cursor: 'pointer',
-                                                },
-                                            }}
-                                        >
-                                            <img
-                                                src={item.image}
-                                                alt={item.title}
-                                                style={{
-
-                                                    border: item === project ? 'solid 2px white' : 'none',
-                                                    width: '100%', maxWidth: 124, borderRadius: '8px'
+                                    {project.images &&
+                                        Object.keys(project.images).map((imageKey, index) => (
+                                            <Box
+                                                key={index}
+                                                onClick={() => handleImageSelect(imageKey)} // Selecionar a imagem ao clicar
+                                                sx={{
+                                                    display: 'flex',
+                                                    justifyContent: 'center',
+                                                    '&:hover': {
+                                                        cursor: 'pointer',
+                                                    },
                                                 }}
-                                            />
-                                        </Box>
-                                    ))}
+                                            >
+                                                <img
+                                                    src={project.images[imageKey].default}
+                                                    alt={project.title}
+                                                    style={{
+                                                        border: selectedImage === project.images[imageKey].default ? 'solid 2px white' : 'none',
+                                                        width: '100%',
+                                                        height: '96px', // Definir tamanho uniforme
+                                                        maxWidth: '124px',
+                                                        objectFit: 'cover',
+                                                        borderRadius: '8px',
+                                                    }}
+                                                />
+                                            </Box>
+                                        ))}
                                 </Carousel>
                             </Box>
                         </Grid>
