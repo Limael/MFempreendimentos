@@ -3,7 +3,7 @@ export type Project = {
   title: string;
   location: string;
   deliveryDate?: string;
-  description: string;
+  description: string | JSX.Element;
   builtArea?: string;
   numberOfRooms?: string;
   numberOfBathrooms?: string;

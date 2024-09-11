@@ -8,21 +8,29 @@ import whatsapp from '../../assets/images/whatsapp_icon.svg';
 import logo from '../../assets/images/logo.svg';
 
 import { RefObject } from 'react';
+import AboutUsModal from '../AboutUsModal';
 
 type HeaderProps = {
-    aboutUsRef: RefObject<HTMLElement>;
     projectsRef: RefObject<HTMLElement>;
     houseProjectsRef: RefObject<HTMLElement>;
 }
 
-export default function Header({ aboutUsRef, projectsRef, houseProjectsRef }: HeaderProps) {
+export default function Header({ projectsRef, houseProjectsRef }: HeaderProps) {
     const [drawerOpen, setDrawerOpen] = useState(false);
+    const [modalOpen, setModalOpen] = useState(false);
 
     const toggleDrawer = (open: boolean | ((prevState: boolean) => boolean)) => (event: any) => {
         if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
             return;
         }
         setDrawerOpen(open);
+    };
+    const openAboutUsModal = () => {
+        setModalOpen(true);
+    };
+
+    const closeAboutUsModal = () => {
+        setModalOpen(false);
     };
 
     const scrollToRef = (ref: RefObject<HTMLElement>) => {
@@ -59,7 +67,7 @@ export default function Header({ aboutUsRef, projectsRef, houseProjectsRef }: He
                 </IconButton>
 
                 <List sx={{ mt: 2 }}>
-                    <ListItem button onClick={() => scrollToRef(aboutUsRef)}>
+                    <ListItem button onClick={openAboutUsModal}>
                         <ListItemText primary="Sobre nós" />
                     </ListItem>
                     <ListItem button onClick={() => scrollToRef(houseProjectsRef)}>
@@ -88,141 +96,146 @@ export default function Header({ aboutUsRef, projectsRef, houseProjectsRef }: He
     );
 
     return (
-        <AppBar
-            position="static"
-            sx={{
-                background: 'rgba(37, 38, 38, 0.32)',
-                height: '116px',
-                display: 'flex',
-                justifyContent: 'center',
-                backdropFilter: 'blur(16px)',
-                position: 'fixed',
-                zIndex: 1
-            }}>
-            <Container>
-                <Toolbar disableGutters sx={{ justifyContent: 'space-between' }}>
-                    <Link href="/" underline="none" color={'inherit'}>
-                        <Box display="flex" alignItems="center">
-                            <img src={logo} alt="Logo" style={{ marginRight: 16 }} />
-                            <Typography variant="h6" sx={{ fontFamily: 'Inter', fontWeight: 'bold', fontSize: '1rem' }}>
-                                MF EMPREENDIMENTOS
-                            </Typography>
-                        </Box>
-                    </Link>
-                    <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 4 }}>
-                        <Button onClick={() => scrollToRef(aboutUsRef)} sx={{ color: 'white', fontFamily: 'Inter', fontSize: '1rem', fontWeight: 400, textTransform: 'none' }}>
-                            Sobre nós
-                        </Button>
-                        <Button onClick={() => scrollToRef(houseProjectsRef)} sx={{ color: 'white', fontFamily: 'Inter', fontSize: '1rem', fontWeight: 400, textTransform: 'none' }}>
-                            Incorporação
-                        </Button>
-                        <Button onClick={() => scrollToRef(projectsRef)} sx={{ color: 'white', fontFamily: 'Inter', fontSize: '1rem', fontWeight: 400, textTransform: 'none' }}>
-                            Obras
-                        </Button>
-                    </Box>
-
-                    <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
-                        <IconButton
-                            edge="start"
-                            color="inherit"
-                            aria-label="menu"
-                            onClick={toggleDrawer(true)}
-                        >
-                            <MenuIcon />
-                        </IconButton>
-                    </Box>
-
-                    <Drawer
-                        anchor="right"
-                        open={drawerOpen}
-                        onClose={toggleDrawer(false)}
-                        PaperProps={{
-                            sx: {
-                                backgroundColor: '#252626',
-                                color: 'white',
-                                width: 250,
-                            }
-                        }}
-                    >
-                        {drawerList}
-                    </Drawer>
-
-                    <Box sx={{
-                        display: { xs: 'none', md: 'flex' },
-                        gap: 2
-                    }}>
-                        <IconButton
-                            href='https://www.facebook.com/mf.incorporadora/' target='_blank'
-                            sx={{
-                                color: 'white',
-                                border: '1px #fff solid',
-                                borderRadius: '8px',
-                                padding: '0',
-                                width: '52px',
-                                height: '52px'
-                            }}>
-                            <img src={facebook} alt="Facebook" />
-                        </IconButton>
-                        <IconButton
-                            href='https://www.instagram.com/mf.empreendimentos/' target='_blank'
-                            sx={{
-                                color: 'white',
-                                border: '1px #fff solid',
-                                borderRadius: '8px',
-                                padding: '0',
-                                width: '52px',
-                                height: '52px'
-                            }}>
-                            <img src={instagram} alt="Instagram" />
-                        </IconButton>
-
-                        <Button
-                            sx={{
-                                background: 'rgba(37, 38, 38, 0.75)',
-                                backdropFilter: 'blur(16px)',
-                                border: '1px solid rgba(255, 255, 255, 0.50)',
-                                py: 0,
-                                gap: 1,
-                                borderRadius: '0px',
-                                boxShadow: 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px'
-                            }}
-                            href='https://api.whatsapp.com/send?phone=5545991291013'
-                            target="_blank"
-
-                        >
-                            <Box
-                                sx={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    width: 32
-                                }}
-                            >
-                                <img src={whatsapp} alt="Whatsapp" />
+        <>
+            <AppBar
+                position="static"
+                sx={{
+                    background: 'rgba(37, 38, 38, 0.32)',
+                    height: '116px',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    backdropFilter: 'blur(16px)',
+                    position: 'fixed',
+                    zIndex: 1
+                }}>
+                <Container>
+                    <Toolbar disableGutters sx={{ justifyContent: 'space-between' }}>
+                        <Link href="/" underline="none" color={'inherit'}>
+                            <Box display="flex" alignItems="center">
+                                <img src={logo} alt="Logo" style={{ marginRight: 16 }} />
+                                <Typography variant="h6" sx={{ fontFamily: 'Inter', fontWeight: 'bold', fontSize: '1rem' }}>
+                                    MF EMPREENDIMENTOS
+                                </Typography>
                             </Box>
-                            <Divider
-                                orientation="vertical"
-                                flexItem
-                                sx={{ background: 'white', }}
-                            />
+                        </Link>
+                        <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 4 }}>
+                            <Button onClick={openAboutUsModal} sx={{ color: 'white', fontFamily: 'Inter', fontSize: '1rem', fontWeight: 400, textTransform: 'none' }}>
+                                Sobre nós
+                            </Button>
+                            <Button onClick={() => scrollToRef(houseProjectsRef)} sx={{ color: 'white', fontFamily: 'Inter', fontSize: '1rem', fontWeight: 400, textTransform: 'none' }}>
+                                Incorporação
+                            </Button>
+                            <Button onClick={() => scrollToRef(projectsRef)} sx={{ color: 'white', fontFamily: 'Inter', fontSize: '1rem', fontWeight: 400, textTransform: 'none' }}>
+                                Obras
+                            </Button>
+                        </Box>
 
-                            <Box
+                        <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+                            <IconButton
+                                edge="start"
+                                color="inherit"
+                                aria-label="menu"
+                                onClick={toggleDrawer(true)}
+                            >
+                                <MenuIcon />
+                            </IconButton>
+                        </Box>
+
+                        <Drawer
+                            anchor="right"
+                            open={drawerOpen}
+                            onClose={toggleDrawer(false)}
+                            PaperProps={{
+                                sx: {
+                                    backgroundColor: '#252626',
+                                    color: 'white',
+                                    width: 250,
+                                }
+                            }}
+                        >
+                            {drawerList}
+                        </Drawer>
+
+                        <Box sx={{
+                            display: { xs: 'none', md: 'flex' },
+                            gap: 2
+                        }}>
+                            <IconButton
+                                href='https://www.facebook.com/mf.incorporadora/' target='_blank'
                                 sx={{
                                     color: 'white',
-                                    fontFamily: 'Inter',
-                                    fontSize: '14px',
-                                    fontWeight: 300,
-                                    textTransform: 'none',
-                                    px: 1
-                                }}
-                            >
-                                Entre em contato
-                            </Box>
-                        </Button>
+                                    border: '1px #fff solid',
+                                    borderRadius: '8px',
+                                    padding: '0',
+                                    width: '52px',
+                                    height: '52px'
+                                }}>
+                                <img src={facebook} alt="Facebook" />
+                            </IconButton>
+                            <IconButton
+                                href='https://www.instagram.com/mf.empreendimentos/' target='_blank'
+                                sx={{
+                                    color: 'white',
+                                    border: '1px #fff solid',
+                                    borderRadius: '8px',
+                                    padding: '0',
+                                    width: '52px',
+                                    height: '52px'
+                                }}>
+                                <img src={instagram} alt="Instagram" />
+                            </IconButton>
 
-                    </Box>
-                </Toolbar>
-            </Container>
-        </AppBar >
+                            <Button
+                                sx={{
+                                    background: 'rgba(37, 38, 38, 0.75)',
+                                    backdropFilter: 'blur(16px)',
+                                    border: '1px solid rgba(255, 255, 255, 0.50)',
+                                    py: 0,
+                                    gap: 1,
+                                    borderRadius: '0px',
+                                    boxShadow: 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px'
+                                }}
+                                href='https://api.whatsapp.com/send?phone=5545991291013'
+                                target="_blank"
+
+                            >
+                                <Box
+                                    sx={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        width: 32
+                                    }}
+                                >
+                                    <img src={whatsapp} alt="Whatsapp" />
+                                </Box>
+                                <Divider
+                                    orientation="vertical"
+                                    flexItem
+                                    sx={{ background: 'white', }}
+                                />
+
+                                <Box
+                                    sx={{
+                                        color: 'white',
+                                        fontFamily: 'Inter',
+                                        fontSize: '14px',
+                                        fontWeight: 300,
+                                        textTransform: 'none',
+                                        px: 1
+                                    }}
+                                >
+                                    Entre em contato
+                                </Box>
+                            </Button>
+
+                        </Box>
+                    </Toolbar>
+                </Container>
+            </AppBar >
+            <AboutUsModal open={modalOpen} handleClose={closeAboutUsModal} />
+
+        </>
+
     );
 }

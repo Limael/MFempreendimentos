@@ -14,46 +14,48 @@ const imagesHouse2: { [key: string]: { default: string } } = import.meta.glob(
   }
 );
 
-export const house1: HouseProject = {
-  images: imagesHouse1,
-  title: "EDIFÍCIO COMERCIAL NOVARE",
-  location: "Centro de Foz do Iguaçu-PR.",
-  deliveryDate: "Junho 2024",
-  description:
-    "Edificação comercial com 7 pavimentos e 1900m² de área construída. Fundação em estacas com alargamento de base, mais de 900m³ de concreto armado, lajes pré-moldadas protendidas, esquadrias com tratamento acústico e térmico.",
-  builtArea: "1900 m²",
-  numberOfRooms: "10",
-  numberOfBathrooms: "5",
-  value: "R$ 2.000.000,00",
-};
-export const house2: HouseProject = {
-  images: imagesHouse2,
-  title: "EDIFÍCIO COMERCIAL NOVARE",
-  location: "Centro de Foz do Iguaçu-PR.",
-  deliveryDate: "Junho 2024",
-  description:
-    "Edificação comercial com 7 pavimentos e 1900m² de área construída. Fundação em estacas com alargamento de base, mais de 900m³ de concreto armado, lajes pré-moldadas protendidas, esquadrias com tratamento acústico e térmico.",
-  builtArea: "1900 m²",
-  numberOfRooms: "10",
-  numberOfBathrooms: "5",
-  value: "R$ 2.000.000,00",
-};
+export const housesProjects: HouseProject[] = [
+  {
+    images: imagesHouse1,
+    title: "Casa 1",
+    location: "Centro de Foz do Iguaçu-PR.",
+    deliveryDate: "Junho 2024",
+    description:
+      "Edificação comercial com 7 pavimentos e 1900m² de área construída. Fundação em estacas com alargamento de base, mais de 900m³ de concreto armado, lajes pré-moldadas protendidas, esquadrias com tratamento acústico e térmico.",
+    builtArea: "1900 m²",
+    numberOfRooms: "10",
+    numberOfBathrooms: "5",
+    value: "R$ 2.000.000,00",
+  },
+  {
+    images: imagesHouse2,
+    title: "Casa 2",
+    location: "Centro de Foz do Iguaçu-PR.",
+    deliveryDate: "Junho 2024",
+    description:
+      "Edificação comercial com 7 pavimentos e 1900m² de área construída. Fundação em estacas com alargamento de base, mais de 900m³ de concreto armado, lajes pré-moldadas protendidas, esquadrias com tratamento acústico e térmico.",
+    builtArea: "1900 m²",
+    numberOfRooms: "10",
+    numberOfBathrooms: "5",
+    value: "R$ 2.000.000,00",
+  },
+];
 
 export const responsive = {
   superLargeDesktop: {
     breakpoint: { max: 4000, min: 3000 },
-    items: 7,
+    items: 5,
   },
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
-    items: 5,
+    items: 3,
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
-    items: 3,
+    items: 2,
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
-    items: 2,
+    items: 1,
   },
 };

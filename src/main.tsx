@@ -1,14 +1,22 @@
-import React from 'react'
+import React, { lazy } from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Home from './pages/Home/index.tsx';
 
+const Home = lazy(() => import('./pages/Home/index.tsx'));
+const HouseProjects = lazy(() => import('./components/HouseProjects/index.tsx'));
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <Home />,
+    children: [
+      {
+        path: 'projeto/:title',
+        element: <HouseProjects />,
+      },
+    ],
   },
+
 ]);
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

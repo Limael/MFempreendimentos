@@ -118,8 +118,9 @@ export default function ProjectModal({
                                         </Typography>
                                     )}
                                     <Typography variant="body1">
-                                        <strong>Obra:</strong> {project.description}
+                                        <strong>Obra:</strong>
                                     </Typography>
+                                    {project.description}
                                 </Box>
                             </Box>
                         </Grid>

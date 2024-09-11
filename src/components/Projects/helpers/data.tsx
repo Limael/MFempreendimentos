@@ -9,6 +9,11 @@ import construcao_de_complexo_esportivo from "../../../assets/images/in_progress
 import edificio_Comercial_Costa_Oeste from "../../../assets/images/in_progress/edificio_Comercial_Costa_Oeste.png";
 import edificio_Comercial_Novare from "../../../assets/images/in_progress/edificio_Comercial_Novare.png";
 
+import ministerioPublicoCuritibaMainPhoto from "../../../assets/images/ministerio-publico-curitiba/ministerio-publico-1.jpg";
+import unilaMainPhoto from "../../../assets/images/unila/unila-0.jpeg";
+import utftprMainPhoto from "../../../assets/images/utfpr/utftpr-0.jpg";
+
+
 const novare: { [key: string]: { default: string } } = import.meta.glob(
   "../../../assets/images/novare/*",
   {
@@ -45,6 +50,18 @@ const fabricaHG: { [key: string]: { default: string } } = import.meta.glob(
     eager: true,
   }
 );
+const ministerioPublicoCuritiba: { [key: string]: { default: string } } =
+  import.meta.glob("../../../assets/images/ministerio-publico-curitiba/*", {
+    eager: true,
+  });
+
+const unila: { [key: string]: { default: string } } = import.meta.glob('../../../assets/images/unila/*"', {
+  eager: true,
+})
+const utfpr: { [key: string]: { default: string } } = import.meta.glob('../../../assets/images/utfpr/*"', {
+  eager: true,
+})
+
 
 export const projectsInProgress: Project[] = [
   {
@@ -101,6 +118,55 @@ Boulevard em Foz do Iguaçu. Área de intervenção total 25.000m² Construção
     Construção do campus do complexo de aprendizagem rural do Mato Grosso do Sul, obra com área de intervenção de 24Ha, área construída total de 3.300m² . Edificação mista em estrutura metálica e alvenaria convencional. Complexo executado em 180 dias corridos. Mais de 16.000m³ de movimentação de terra e ajustes de terreno. 800m lineares de cravação de estacas em solo mole. Mais de 90T de aço para estrutura metálica. Implantação total do campus com prazo reduzido e trabalho em 2 turnos.
     `,
     images: senar,
+  },
+  {
+    image: ministerioPublicoCuritibaMainPhoto,
+    title: "MINISTÉRIO PÚBLICO DE CURITIBA",
+    location: "Centro Cívico de Curitiba-PR.",
+    description: (
+      <>
+        Construção da Nova Sede do Ministério Público de Curitiba, obra com
+        13.000m² de construção com dois subsolos, pavimento térreo e 8
+        Pavimentos tipo incluindo um auditório e pavimento técnico, trincheira
+        de ligação entre os prédios com túnel Linear em Método não destrutivo,
+        Fundação em Estaca Raiz, Parede Diafragma, Estrutura em concreto armado
+        aparente.
+        <br />
+        <strong> Movimentação de terra: </strong>
+        <ul>
+          <li> 30.000m³ </li>
+          <li>660T de aço aplicado. </li>
+          <li>9.000m³ de concreto armado. </li>
+          <li>Lajes em concreto armado protendidas.</li>
+          <li>Estrutura completa em concreto aparente como acabamento.</li>
+          <li>62 metros de túnel com método não destrutivo.</li>
+          <li>04 elevadores alta performance.</li>
+          <li>30T. de alumínio aplicados em fachada e esquadrias.</li>
+        </ul>
+      </>
+    ),
+    images: ministerioPublicoCuritiba,
+  },
+  {
+    image: unilaMainPhoto,
+    title: "CONSTRUÇÃO DAS OBRAS DO EDIFÍCIO ESTUDANTIL DA UNILA",
+    location: "Foz do Iguaçu-PR.",
+    description: (
+      <>
+        Implantação dos blocos de moradia A e B, refeitório guarita e quadras de esportes da Universidade Latina Americana. Obra com área total edificada de 5800m². prazo de entrega da obra 12 meses
+      </>
+    ),
+    images: unila,
+  },
+  {
+    image: utftprMainPhoto,
+    title: "IMPLANTAÇÃO DOS CAMPUS UTF-PR TOLEDO E MEDIANEIRA",
+    location: "Toledo e Medianeira-PR.",
+    description: (
+      <>
+        Implantação dos campus UTF-Pr em Medianeira e Toledo. Blocos de sala de aula, laboratórios, quadra de esportes, guaritas toda infraestrutura de funcionamento. Mais de 18.000m² de área construída.      </>
+    ),
+    images: utfpr,
   },
 ];
 
