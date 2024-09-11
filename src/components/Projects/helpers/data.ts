@@ -39,6 +39,12 @@ const senar: { [key: string]: { default: string } } = import.meta.glob(
     eager: true,
   }
 );
+const fabricaHG: { [key: string]: { default: string } } = import.meta.glob(
+  "../../../assets/images/fabrica-hg/*",
+  {
+    eager: true,
+  }
+);
 
 export const projectsInProgress: Project[] = [
   {
@@ -85,7 +91,7 @@ Boulevard em Foz do Iguaçu. Área de intervenção total 25.000m² Construção
     description: `
     implantação da fábrica de CD unidade Foz do Iguaçu. Terreno com 11.000m² , construção com área total de 5.350m2 de aera construída, 11.000m³ de movimentação de terra. 92 Ton. de estruturas metálicas. 1.200m³ de lançamento de concreto. Cabine de alta tensão, subestação e gerador de energia para 500KVA.
     `,
-    images: royalBoulevard,
+    images: fabricaHG,
   },
   {
     image: COMPLEXO_DE_SERVICO_NACIONAL_DE_APRENDIZAGEM,

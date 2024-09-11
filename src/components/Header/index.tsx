@@ -73,10 +73,11 @@ export default function Header({ aboutUsRef, projectsRef, houseProjectsRef }: He
             </Box>
             <Divider sx={{ borderColor: 'rgba(255, 255, 255, 0.1)' }} />
             <Box display="flex" justifyContent="center" mb={2}>
-                <IconButton sx={{ color: 'white' }}>
+                <IconButton sx={{ color: 'white' }} href='https://www.facebook.com/mf.incorporadora/' target='_blank'
+                >
                     <img src={facebook} alt="Facebook" style={{ width: 24, height: 24 }} />
                 </IconButton>
-                <IconButton sx={{ color: 'white' }}>
+                <IconButton sx={{ color: 'white' }} href='https://www.instagram.com/mf.empreendimentos/' target='_blank' >
                     <img src={instagram} alt="Instagram" style={{ width: 24, height: 24 }} />
                 </IconButton>
                 <IconButton href='https://api.whatsapp.com/send?phone=5545991291013' target="_blank" sx={{ color: 'white' }}>
@@ -151,6 +152,7 @@ export default function Header({ aboutUsRef, projectsRef, houseProjectsRef }: He
                         gap: 2
                     }}>
                         <IconButton
+                            href='https://www.facebook.com/mf.incorporadora/' target='_blank'
                             sx={{
                                 color: 'white',
                                 border: '1px #fff solid',
@@ -162,6 +164,7 @@ export default function Header({ aboutUsRef, projectsRef, houseProjectsRef }: He
                             <img src={facebook} alt="Facebook" />
                         </IconButton>
                         <IconButton
+                            href='https://www.instagram.com/mf.empreendimentos/' target='_blank'
                             sx={{
                                 color: 'white',
                                 border: '1px #fff solid',
