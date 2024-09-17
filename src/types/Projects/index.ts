@@ -8,6 +8,7 @@ export type Project = {
   numberOfRooms?: string;
   numberOfBathrooms?: string;
   value?: string;
+  category?: string;
   images: {
     [key: string]: {
       default: string;

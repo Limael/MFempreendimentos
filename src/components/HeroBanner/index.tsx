@@ -71,7 +71,7 @@ export default function HeroBanner({ projectsRef }: HeroBannerProps) {
                             px: 1
                         }}
                     >
-                        Conheça nossos trabalhos
+                        Conheça nossos trabalhos:
                     </Box>
                     <Divider
                         orientation="vertical"

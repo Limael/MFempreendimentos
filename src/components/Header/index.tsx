@@ -101,7 +101,7 @@ export default function Header({ projectsRef, houseProjectsRef }: HeaderProps) {
                 position="static"
                 sx={{
                     background: 'rgba(37, 38, 38, 0.32)',
-                    height: '116px',
+                    height: '80px',
                     display: 'flex',
                     justifyContent: 'center',
                     backdropFilter: 'blur(16px)',
@@ -113,20 +113,20 @@ export default function Header({ projectsRef, houseProjectsRef }: HeaderProps) {
                         <Link href="/" underline="none" color={'inherit'}>
                             <Box display="flex" alignItems="center">
                                 <img src={logo} alt="Logo" style={{ marginRight: 16 }} />
-                                <Typography variant="h6" sx={{ fontFamily: 'Inter', fontWeight: 'bold', fontSize: '1rem' }}>
+                                <Typography variant="h6" sx={{ fontFamily: 'Inter', fontWeight: 'bold', fontSize: '.85rem' }}>
                                     MF EMPREENDIMENTOS
                                 </Typography>
                             </Box>
                         </Link>
                         <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 4 }}>
-                            <Button onClick={openAboutUsModal} sx={{ color: 'white', fontFamily: 'Inter', fontSize: '1rem', fontWeight: 400, textTransform: 'none' }}>
-                                Sobre nós
+                            <Button onClick={openAboutUsModal} sx={{ color: 'white', fontFamily: 'Inter', fontSize: '.85rem', fontWeight: 400, textTransform: 'none' }}>
+                                SOBRE NÓS
                             </Button>
-                            <Button onClick={() => scrollToRef(houseProjectsRef)} sx={{ color: 'white', fontFamily: 'Inter', fontSize: '1rem', fontWeight: 400, textTransform: 'none' }}>
-                                Incorporação
+                            <Button onClick={() => scrollToRef(houseProjectsRef)} sx={{ color: 'white', fontFamily: 'Inter', fontSize: '.85rem', fontWeight: 400, textTransform: 'none' }}>
+                                INCORPORAÇÃO
                             </Button>
-                            <Button onClick={() => scrollToRef(projectsRef)} sx={{ color: 'white', fontFamily: 'Inter', fontSize: '1rem', fontWeight: 400, textTransform: 'none' }}>
-                                Obras
+                            <Button onClick={() => scrollToRef(projectsRef)} sx={{ color: 'white', fontFamily: 'Inter', fontSize: '.85rem', fontWeight: 400, textTransform: 'none' }}>
+                                OBRAS
                             </Button>
                         </Box>
 

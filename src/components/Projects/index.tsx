@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box, Tabs, Tab, Divider, Typography, Slide, Grid } from '@mui/material';
+import { Box, Tabs, Tab, Divider, Typography, Slide, Grid, SelectChangeEvent, FormControl, InputLabel, Select, MenuItem } from '@mui/material';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { projectsCompleted, projectsInProgress, responsive } from './helpers/data';
@@ -16,6 +16,11 @@ export default function Projects() {
     const [selectedProjectIndex, setSelectedProjectIndex] = useState<number>(0);
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
     const [hoverIndex, setHoverIndex] = useState<number | null>(null);
+    const [type, setType] = useState('todas');
+
+    const handleChangeType = (event: SelectChangeEvent) => {
+        setType(event.target.value as string);
+    };
 
     const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
         setValue(newValue);
@@ -38,13 +43,19 @@ export default function Projects() {
         setSelectedProjectIndex(index);
     };
 
+    const filteredProjects = [...projectsInProgress, ...projectsCompleted].filter((project) => {
+        if (type === 'todas') return true; // Mostra todos os projetos
+        return project.category === type;   // Mostra apenas a categoria selecionada
+    });
+
+
     return (
         <Box sx={{ width: '100%', background: 'rgba(37, 38, 38, 1)', color: 'white', paddingY: '3rem' }}>
             <Typography variant="h4" align="center" mb={2} fontWeight={600}>
-                Obras
+                OBRAS
             </Typography>
             <Typography variant="body2" align="center" fontWeight={300} mb={4}>
-                Conheça nosso portifólio de obras.
+                Conheça nosso portifólio de obras:
             </Typography>
             <Tabs
                 value={value}
@@ -67,12 +78,12 @@ export default function Projects() {
                     },
                 }}
             >
+                <Tab label="Todas" />
                 <Tab label="Em andamento" />
                 <Tab label="Finalizadas" />
-                <Tab label="Todas" />
             </Tabs>
 
-            {value === 0 && (
+            {value === 1 && (
                 <>
                     <Box ml={6}>
                         <Carousel
@@ -185,7 +196,7 @@ export default function Projects() {
                 </>
             )}
 
-            {value === 1 && (
+            {value === 2 && (
                 <>
                     <Box ml={6}>
                         <Carousel
@@ -299,84 +310,128 @@ export default function Projects() {
                 </>
             )}
 
-            {value === 2 && (
+            {value === 0 && (
                 <Grid container spacing={2} sx={{ padding: '0 10%' }}>
-                    {[...projectsInProgress, ...projectsCompleted].map((project, index) => (
-                        <Grid item xs={12} sm={6} md={4} key={index}>
-                            <Box
-                                sx={{
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    alignItems: 'flex-start',
-                                    textAlign: 'start',
-                                    padding: '10px',
-                                    borderRadius: '8px',
-                                    cursor: 'pointer',
-                                    position: 'relative',
-                                    overflow: 'hidden',
-                                }}
-                                onMouseEnter={() => setHoverIndex(index)}
-                                onMouseLeave={() => setHoverIndex(null)}
-                                onClick={() => handleClickOpen(index, [...projectsInProgress, ...projectsCompleted])}
-                            >
+                    <FormControl fullWidth sx={{ mt: 6 }} color="info" variant="outlined">
+                        <InputLabel
+                            id="demo-simple-select-label"
+                            sx={{ color: 'white' }}
+                        >
+                            Categoria
+                        </InputLabel>
+                        <Select
+                            labelId="demo-simple-select-label"
+                            id="demo-simple-select"
+                            value={type}
+                            label="Categoria"
+                            variant="outlined"
+                            onChange={handleChangeType}
+                            size='small'
+                            sx={{
+                                color: 'white',
+                                '.MuiOutlinedInput-notchedOutline': {
+                                    borderColor: 'white',
+                                },
+                                '&:hover .MuiOutlinedInput-notchedOutline': {
+                                    borderColor: 'white',
+                                },
+                                '.MuiSvgIcon-root': {
+                                    color: 'white',
+                                },
+                                '& .MuiSelect-icon': {
+                                    color: 'white',
+                                },
+                            }}
+                            MenuProps={{
+                                PaperProps: {
+                                    sx: {
+                                        backgroundColor: 'rgba(37, 38, 38, 1)',
+                                        color: 'white',
+                                    },
+                                },
+                            }}
+                        >
+                            <MenuItem selected value={'todas'}>TODAS</MenuItem>
+                            <MenuItem value={'corporativas'}>CORPORATIVAS</MenuItem>
+                            <MenuItem value={'publicas'}>PÚBLICAS</MenuItem>
+                            <MenuItem value={'industriais'}>INDUSTRIAIS</MenuItem>
+                            <MenuItem value={'residenciais'}>RESIDENCIAIS</MenuItem>
+                        </Select>
+                    </FormControl>
+
+
+                    <Grid container spacing={2} sx={{ padding: '0 10%' }}>
+                        {filteredProjects.map((project, index) => (
+                            <Grid item xs={12} sm={6} md={4} key={index}>
                                 <Box
                                     sx={{
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'flex-start',
+                                        textAlign: 'start',
+                                        padding: '10px',
+                                        borderRadius: '8px',
+                                        cursor: 'pointer',
                                         position: 'relative',
-                                        width: '100%',
-                                        height: {
-                                            xs: '300px',
-                                            md: '400px',
-                                        },
                                         overflow: 'hidden',
                                     }}
+                                    onMouseEnter={() => setHoverIndex(index)}
+                                    onMouseLeave={() => setHoverIndex(null)}
+                                    onClick={() => handleClickOpen(index, filteredProjects)}
                                 >
                                     <Box
-                                        component={'img'}
-                                        src={project.image}
-                                        alt={project.title}
-                                        draggable={false}
                                         sx={{
+                                            position: 'relative',
                                             width: '100%',
-                                            height: '100%',
-                                            borderRadius: '8px',
-                                            objectFit: 'cover',
-                                            objectPosition: 'center',
+                                            height: {
+                                                xs: '300px',
+                                                md: '400px',
+                                            },
+                                            overflow: 'hidden',
                                         }}
-                                    />
-                                    {/* Slide overlay */}
-                                    <Slide
-                                        direction="up"
-                                        in={hoverIndex === index}
-                                        timeout={500}
-                                        mountOnEnter
-                                        unmountOnExit
                                     >
                                         <Box
+                                            component="img"
+                                            src={project.image}
+                                            alt={project.title}
+                                            draggable={false}
                                             sx={{
-                                                position: 'absolute',
-                                                top: 0,
-                                                left: 0,
-                                                right: 0,
-                                                bottom: 0,
-                                                backgroundColor: 'rgba(0, 0, 0, 0.6)',
-                                                display: 'flex',
-                                                justifyContent: 'center',
-                                                alignItems: 'center',
-                                                color: 'white',
-                                                flexDirection: 'column',
+                                                width: '100%',
+                                                height: '100%',
+                                                borderRadius: '8px',
+                                                objectFit: 'cover',
+                                                objectPosition: 'center',
                                             }}
-                                        >
-                                            <AddCircleOutlineIcon sx={{ fontSize: 40, mb: 1 }} />
-                                            <Typography variant="body1">Ver Mais</Typography>
-                                        </Box>
-                                    </Slide>
+                                        />
+                                        {/* Slide overlay */}
+                                        <Slide direction="up" in={hoverIndex === index} timeout={500} mountOnEnter unmountOnExit>
+                                            <Box
+                                                sx={{
+                                                    position: 'absolute',
+                                                    top: 0,
+                                                    left: 0,
+                                                    right: 0,
+                                                    bottom: 0,
+                                                    backgroundColor: 'rgba(0, 0, 0, 0.6)',
+                                                    display: 'flex',
+                                                    justifyContent: 'center',
+                                                    alignItems: 'center',
+                                                    color: 'white',
+                                                    flexDirection: 'column',
+                                                }}
+                                            >
+                                                <AddCircleOutlineIcon sx={{ fontSize: 40, mb: 1 }} />
+                                                <Typography variant="body1">Ver Mais</Typography>
+                                            </Box>
+                                        </Slide>
+                                    </Box>
+                                    <Typography variant="subtitle1" sx={{ marginTop: '10px', fontWeight: 'bold' }}>
+                                        {project.title}
+                                    </Typography>
                                 </Box>
-                                <Typography variant="subtitle1" sx={{ marginTop: '10px', fontWeight: 'bold' }}>
-                                    {project.title}
-                                </Typography>
-                            </Box>
-                        </Grid>
-                    ))}
+                            </Grid>
+                        ))}
+                    </Grid>
                 </Grid>
             )}
 

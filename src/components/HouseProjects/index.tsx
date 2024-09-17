@@ -65,10 +65,10 @@ export default function HouseProjects() {
         <>
             <Box sx={{ width: '100%', background: 'rgba(37, 38, 38, 1)', color: 'white', paddingY: '3rem' }}>
                 <Typography variant="h4" align="center" mb={2}>
-                    Incorporação
+                    INCORPORAÇÃO
                 </Typography>
                 <Typography variant="body2" align="center" fontWeight={300} mb={4}>
-                    Conheça nossos empreendimentos.
+                    Conheça nossos empreendimentos:
                 </Typography>
                 <Box ml={6}>
                     <Carousel

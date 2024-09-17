@@ -65,6 +65,7 @@ const utfpr: { [key: string]: { default: string } } = import.meta.glob('../../..
 
 export const projectsInProgress: Project[] = [
   {
+    category: 'corporativas',
     image: edificio_Comercial_Novare,
     images: novare,
     title: "EDIFÍCIO COMERCIAL NOVARE",
@@ -73,6 +74,7 @@ export const projectsInProgress: Project[] = [
       "Edificação comercial com 7 pavimentos e 1900m² de área construída. Fundação em estacas com alargamento de base, mais de 900m³ de concreto armado, lajes pré-moldadas protendidas, esquadrias com tratamento acústico e térmico.",
   },
   {
+    category: 'corporativas',
     images: edco,
     image: edificio_Comercial_Costa_Oeste,
     title: "EDIFÍCIO COMERCIAL COSTA OESTE",
@@ -81,6 +83,7 @@ export const projectsInProgress: Project[] = [
 Lançamento de 1300m³ de concreto armado aparente. Esquadrias em pele de vidro e tratamento acústico e térmico. Sistema de automação completo. Sistema de climatização. Elevador alta performance.`,
   },
   {
+    category: 'publicas',
     images: cdce,
     image: construcao_de_complexo_esportivo,
     title: "CONSTRUÇÃO DE COMPLEXO ESPORTIVO",
@@ -93,6 +96,7 @@ Lançamento de 1300m³ de concreto armado aparente. Esquadrias em pele de vidro 
 
 export const projectsCompleted: Project[] = [
   {
+    category: 'residenciais',
     image: ROYAL_BOULEVAR,
     title: "CONDOMÍNIO RESIDENCIAL HORIZONTAL ROYAL BOULEVAR",
     location: "Foz do Iguaçu-PR",
@@ -102,6 +106,7 @@ Boulevard em Foz do Iguaçu. Área de intervenção total 25.000m² Construção
     images: royalBoulevard,
   },
   {
+    category: 'industriais',
     image: FABRICA_DA_HG_DO_BRASIL,
     title: "FABRICA DA HG DO BRASIL",
     location: "Área industrial de Foz do Iguaçu-PR",
@@ -111,6 +116,7 @@ Boulevard em Foz do Iguaçu. Área de intervenção total 25.000m² Construção
     images: fabricaHG,
   },
   {
+    category: 'publicas',
     image: COMPLEXO_DE_SERVICO_NACIONAL_DE_APRENDIZAGEM,
     title: "CONSTRUÇÃO DO COMPLEXO DE SERVIÇO NACIONAL DE APRENDIZAGEM SENAR",
     location: "Fazenda Embrapa Campo Grande-MS",
@@ -120,6 +126,7 @@ Boulevard em Foz do Iguaçu. Área de intervenção total 25.000m² Construção
     images: senar,
   },
   {
+    category: 'publicas',
     image: ministerioPublicoCuritibaMainPhoto,
     title: "MINISTÉRIO PÚBLICO DE CURITIBA",
     location: "Centro Cívico de Curitiba-PR.",
@@ -148,6 +155,7 @@ Boulevard em Foz do Iguaçu. Área de intervenção total 25.000m² Construção
     images: ministerioPublicoCuritiba,
   },
   {
+    category: 'publicas',
     image: unilaMainPhoto,
     title: "CONSTRUÇÃO DAS OBRAS DO EDIFÍCIO ESTUDANTIL DA UNILA",
     location: "Foz do Iguaçu-PR.",
@@ -159,6 +167,7 @@ Boulevard em Foz do Iguaçu. Área de intervenção total 25.000m² Construção
     images: unila,
   },
   {
+    category: 'publicas',
     image: utftprMainPhoto,
     title: "IMPLANTAÇÃO DOS CAMPUS UTF-PR TOLEDO E MEDIANEIRA",
     location: "Toledo e Medianeira-PR.",
