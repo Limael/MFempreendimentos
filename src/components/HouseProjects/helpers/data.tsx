@@ -56,14 +56,14 @@ export const housesProjects: HouseProject[] = [
         aquecimento de agua solar, sistema de aquecimento de piscina, piscina
         com salinizador, persianas automatizadas, movelaria completa, iluminação
         interna e externa da casa e piscina.
-        <h3>Parte inferior:</h3>
+        <strong>Parte inferior:</strong>
         <ul>
           <li>02 Garagens amplas cobertas</li>
           <li>Escritório com banheiro</li>
           <li>Sala de cinema com banheiro</li>
           <li>Suíte com closet</li>
         </ul>
-        <h3>Parte superior:</h3>
+        <strong>Parte superior:</strong>
         <ul>
           <li>Suíte master com closet e banheiro</li>
           <li>02 Suítes com closet</li>
