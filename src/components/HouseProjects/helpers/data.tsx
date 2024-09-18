@@ -17,15 +17,21 @@ const imagesApartamentoImobiliado: { [key: string]: { default: string } } =
   import.meta.glob("../../../assets/images/apartamento-imobiliado/*", {
     eager: true,
   });
+const imagesSobrado: { [key: string]: { default: string } } = import.meta.glob(
+  "../../../assets/images/sobrado/*",
+  {
+    eager: true,
+  }
+);
 
 export const housesProjects: HouseProject[] = [
   {
     images: imagesHouse1,
     title: "RESIDENCIAL ROYAL BOULEVARD 1",
-    location: "Centro de Foz do Iguaçu-PR.",
+    location: "Avenida das Cataratas.",
     deliveryDate: "Junho 2024",
     description:
-      "Edificação comercial com 7 pavimentos e 1900m² de área construída. Fundação em estacas com alargamento de base, mais de 900m³ de concreto armado, lajes pré-moldadas protendidas, esquadrias com tratamento acústico e térmico.",
+      "Residencial familiar de alto padrão localizado em um condomínio de luxo, perfeito para a comodidade, segurança e bem-estar da família. O projeto dos sonhos que você pode chamar de seu, com cerca de 284 metros de área total.",
     builtArea: "1900 m²",
     numberOfRooms: "10",
     numberOfBathrooms: "5",
@@ -34,19 +40,19 @@ export const housesProjects: HouseProject[] = [
   {
     images: imagesHouse2,
     title: "RESIDENCIAL ROYAL BOULEVARD 2",
-    location: "Centro de Foz do Iguaçu-PR.",
+    location: "Avenida das Cataratas.",
     deliveryDate: "Junho 2024",
     description:
-      "Edificação comercial com 7 pavimentos e 1900m² de área construída. Fundação em estacas com alargamento de base, mais de 900m³ de concreto armado, lajes pré-moldadas protendidas, esquadrias com tratamento acústico e térmico.",
+      "Projetada com muita delicadeza, a casa remete a um estilo de vida único e exala requinte e sofisticação. A edificação é composta por 1 suíte master, 3 suítes tradicionais, sala de estar e jantar, espaço gourmet, lavanderia com lavabo, garagem com depósito e área externa com piscina.",
     builtArea: "1900 m²",
     numberOfRooms: "10",
     numberOfBathrooms: "5",
     value: "R$ 2.000.000,00",
   },
   {
-    images: imagesHouse2,
+    images: imagesSobrado,
     title: "SOBRADO ENCANTADOR",
-    location: "Centro de Foz do Iguaçu-PR.",
+    location: "Condomínio Vila A Park",
     deliveryDate: "Junho 2024",
     description: (
       <>
@@ -82,8 +88,8 @@ export const housesProjects: HouseProject[] = [
         </p>
       </>
     ),
-    builtArea: "1900 m²",
-    numberOfRooms: "10",
+    builtArea: "311m²",
+    numberOfRooms: "4",
     numberOfBathrooms: "5",
     value: "R$ 2.000.000,00",
   },
@@ -118,8 +124,8 @@ export const housesProjects: HouseProject[] = [
       </>
     ),
     builtArea: "72m²",
-    numberOfRooms: "10",
-    numberOfBathrooms: "5",
+    numberOfRooms: "2",
+    numberOfBathrooms: "1",
     value: "R$ 2.000.000,00",
   },
 ];
