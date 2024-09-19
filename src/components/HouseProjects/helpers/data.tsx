@@ -23,6 +23,12 @@ const imagesSobrado: { [key: string]: { default: string } } = import.meta.glob(
     eager: true,
   }
 );
+const recantoDoLago: { [key: string]: { default: string } } = import.meta.glob(
+  "../../../assets/images/Recanto do Lago/*",
+  {
+    eager: true,
+  }
+);
 
 export const housesProjects: HouseProject[] = [
   {
@@ -163,6 +169,22 @@ export const housesProjects: HouseProject[] = [
       </>
     ),
     builtArea: "72m²",
+    numberOfRooms: "2",
+    numberOfBathrooms: "1",
+    value: "R$ 2.000.000,00",
+  },
+  {
+    images: recantoDoLago,
+    title: "TERRENO LOTEAMENTO RECANTO DO LAGO",
+    location: " Av. Maria Bubiak em frente ao Golf.  quadra 9A, lote 264.",
+    deliveryDate: "Junho 2024",
+    description: (
+      <>
+        Oportunidade para investimento. Terreno sub esquina de frente para o
+        lago, na entrada do loteamento.
+      </>
+    ),
+    builtArea: "10x30, 300m²",
     numberOfRooms: "2",
     numberOfBathrooms: "1",
     value: "R$ 2.000.000,00",
