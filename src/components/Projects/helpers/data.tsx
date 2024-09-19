@@ -5,7 +5,6 @@ import COMPLEXO_DE_SERVICO_NACIONAL_DE_APRENDIZAGEM from "../../../assets/images
 import FABRICA_DA_HG_DO_BRASIL from "../../../assets/images/completed/FABRICA_DA_HG_DO_BRASIL.png";
 import ROYAL_BOULEVAR from "../../../assets/images/completed/ROYAL_BOULEVAR.png";
 
-import construcao_de_complexo_esportivo from "../../../assets/images/cdce/complexo-esp-5.jpg";
 import edificio_Comercial_Costa_Oeste from "../../../assets/images/in_progress/edificio_Comercial_Costa_Oeste.png";
 import edificio_Comercial_Novare from "../../../assets/images/in_progress/edificio_Comercial_Novare.png";
 import ministerioPublicoCuritibaMainPhoto from "../../../assets/images/ministerio-publico-curitiba/ministerio-publico-1.jpg";
@@ -74,12 +73,7 @@ const edco: { [key: string]: { default: string } } = import.meta.glob(
     eager: true,
   }
 );
-const cdce: { [key: string]: { default: string } } = import.meta.glob(
-  "../../../assets/images/cdce/*",
-  {
-    eager: true,
-  }
-);
+
 const royalBoulevard: { [key: string]: { default: string } } = import.meta.glob(
   "../../../assets/images/royalBoulevard/*",
   {
@@ -135,16 +129,7 @@ export const projectsInProgress: Project[] = [
     description: `Edificação comercial com 9 pavimentos, com 2100m² de área construída. Subsolo com paredes de concreto armado aparente. Estrutura em concreto aparente. Fundações profundas com estaca hélice contínua. Lajes em concreto protendo. 
 Lançamento de 1300m³ de concreto armado aparente. Esquadrias em pele de vidro e tratamento acústico e térmico. Sistema de automação completo. Sistema de climatização. Elevador alta performance.`,
   },
-  {
-    category: "publicas",
-    images: cdce,
-    image: construcao_de_complexo_esportivo,
-    title: "CONSTRUÇÃO DE COMPLEXO ESPORTIVO",
-    location: "São João-PR.",
-    builtArea: "12039,97 m²",
-    description:
-      "Construção de COMPLEXO ESPORTIVO contendo: Ginásio de Esportes, com ambientes de quadra poliesportiva, arquibancadas, cabines para imprensa, hall de entrada, bilheteria, copa, cozinha, vestiários, instalações sanitárias masculinas e femininas, instalações sanitárias masculinas e femininas para PCD, áreas de circulação e salas multiuso. Campo para Futebol Sintético - CGSF e quadra poliesportiva - modelo meu campinho, além de quadra de areia.",
-  },
+
   {
     category: "industriais",
     images: cilo_industrial,
@@ -299,7 +284,7 @@ Boulevard em Foz do Iguaçu. Área de intervenção total 25.000m² Construção
     category: "residenciais",
     images: casa_terrea,
     image: casa_terrea_banner,
-    title: "CASA TERREA",
+    title: "CASA TÉRREA",
     location: "Condomínio Royal Boulevard",
     builtArea: "311 m²",
     description:

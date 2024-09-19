@@ -231,6 +231,15 @@ export default function HouseModal({
                                         </Typography>
                                     </Box> */}
                 </Box>
+                <Box mt={3}>
+                  <Typography variant="subtitle1">Contato:</Typography>
+                  <Typography variant="subtitle1" sx={{ marginLeft: "0.5rem" }}>
+                    (45) 99129-1013
+                  </Typography>
+                  <Typography variant="subtitle1" sx={{ marginLeft: "0.5rem" }}>
+                    (45) 99932-1981
+                  </Typography>
+                </Box>
               </Box>
             </Grid>
             <Grid item xs={12} md={6} sx={{ position: "relative" }}>
