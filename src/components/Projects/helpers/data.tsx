@@ -149,21 +149,21 @@ Lançamento de 1300m³ de concreto armado aparente. Esquadrias em pele de vidro 
     category: "industriais",
     images: cilo_industrial,
     image: cilo_banner,
-    title: "CILO INDUSTRIAL",
+    title: "SILO INDUSTRIAL",
     location: "São João-PR.",
     builtArea: "12039,97 m²",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis facere inventore saepe natus quo molestias, corporis et quos illo minus nam magni illum, aliquid consequatur aperiam fuga eos, excepturi commodi!",
+      "Construção do silo de armazenagem de alpiste com capacidade para 30 mil sacas. Balança de pesagem de caminhões para 9 eixos. Moega para estocagem de 30 mil sacas de matéria-prima. Silos de armazenagem, barracão para estocagem e expedição",
   },
   {
     category: "publicas",
     images: complexo_sao_joao,
     image: complexo_sao_joao_banner,
-    title: "COMPLEXO SÃO JÕAO",
+    title: "CONSTRUÇÃO DO COMPLEXO ESPORTIVO SÃO JOÃO",
     location: "São João-PR.",
     builtArea: "12039,97 m²",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis facere inventore saepe natus quo molestias, corporis et quos illo minus nam magni illum, aliquid consequatur aperiam fuga eos, excepturi commodi!",
+      "Construção de COMPLEXO ESPORTIVO contendo: Ginásio de Esportes, com ambientes de quadra poliesportiva, arquibancadas, cabines para imprensa, hall de entrada, bilheteria, copa, cozinha, vestiários, instalações sanitárias masculinas e femininas, instalações sanitárias masculinas e femininas para PCD, áreas de circulação e salas multiuso. Campo para Futebol Sintético - CGSF e quadra poliesportiva - modelo meu campinho, além de quadra de areia.",
   },
 ];
 
@@ -263,7 +263,7 @@ Boulevard em Foz do Iguaçu. Área de intervenção total 25.000m² Construção
     location: "Condomínio Royal Boulevard",
     builtArea: "311 m²",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis facere inventore saepe natus quo molestias, corporis et quos illo minus nam magni illum, aliquid consequatur aperiam fuga eos, excepturi commodi!",
+      "Um projeto inspirador e moderno. Este residencial se destaca por suas formas e funcionalidades, onde a arquitetura industrial e moderna se unem, criando cenários inspiradores. Neste projeto arquitetônico, a visão audaciosa ganha vida, abraçando a estética contemporânea e as demandas práticas da indústria. E o mais importante: todos os detalhes em perfeita concordância com a personalidade e o desejo do cliente.",
   },
   {
     category: "residenciais",
@@ -273,7 +273,7 @@ Boulevard em Foz do Iguaçu. Área de intervenção total 25.000m² Construção
     location: "Condomínio Royal Boulevard",
     builtArea: "360 m²",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis facere inventore saepe natus quo molestias, corporis et quos illo minus nam magni illum, aliquid consequatur aperiam fuga eos, excepturi commodi!",
+      "Projeto moderno, com o conceito de ambientes integrados e amplas aberturas de portas e janelas, que permitem a máxima entrada de iluminação natural em todos os espaços.",
   },
   {
     category: "residenciais",
@@ -283,7 +283,7 @@ Boulevard em Foz do Iguaçu. Área de intervenção total 25.000m² Construção
     location: "Condomínio Vila A Park",
     builtArea: "311 m²",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis facere inventore saepe natus quo molestias, corporis et quos illo minus nam magni illum, aliquid consequatur aperiam fuga eos, excepturi commodi!",
+      "Este projeto residencial ocupa uma área de 350m², com um estilo exclusivo que combina o industrial e o moderno. A combinação dos elementos e o método construtivo são o diferencial deste grande projeto. Foi utilizado um sistema misto que integra concreto, perfis de aço e alvenaria convencional. Com essa combinação, foi possível aproveitar ao máximo as vantagens de cada material, tanto em termos estruturais, construtivos quanto estéticos",
   },
   {
     category: "residenciais",
@@ -293,7 +293,7 @@ Boulevard em Foz do Iguaçu. Área de intervenção total 25.000m² Construção
     location: "Condomínio Royal Boulevard",
     builtArea: "360 m²",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis facere inventore saepe natus quo molestias, corporis et quos illo minus nam magni illum, aliquid consequatur aperiam fuga eos, excepturi commodi!",
+      "Autenticidade, linhas limpas e marcantes que transmitem sofisticação e modernidade são algumas das características deste sobrado, localizado em um condomínio em Foz do Iguaçu.",
   },
   {
     category: "residenciais",
@@ -303,7 +303,7 @@ Boulevard em Foz do Iguaçu. Área de intervenção total 25.000m² Construção
     location: "Condomínio Royal Boulevard",
     builtArea: "311 m²",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis facere inventore saepe natus quo molestias, corporis et quos illo minus nam magni illum, aliquid consequatur aperiam fuga eos, excepturi commodi!",
+      "Residência térrea projetada para um cliente jovem e moderno. A arquitetura deste projeto é marcada por um estilo industrial, composta por ambientes integrados e elementos metálicos. Destaque para a área externa, que conta com uma piscina e área gourmet, oferecendo espaços amplos e aconchegantes.",
   },
 
   {
@@ -314,7 +314,7 @@ Boulevard em Foz do Iguaçu. Área de intervenção total 25.000m² Construção
     location: "Condomínio Royal Boulevard",
     builtArea: "360 m²",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis facere inventore saepe natus quo molestias, corporis et quos illo minus nam magni illum, aliquid consequatur aperiam fuga eos, excepturi commodi!",
+      "Um residencial de dois pisos com uma arquitetura sofisticada e moderna, marcado pelo contraste de cores e vidros espelhados que conferem um toque diferenciado ao projeto. Destaque para a área externa, com piscina ao lado da área gourmet, separadas por portas que integram os espaços. Mais um projeto de alto padrão que atendeu plenamente às demandas do cliente.",
   },
   {
     category: "residenciais",
@@ -324,7 +324,7 @@ Boulevard em Foz do Iguaçu. Área de intervenção total 25.000m² Construção
     location: "Condomínio Royal Boulevard",
     builtArea: "311 m²",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis facere inventore saepe natus quo molestias, corporis et quos illo minus nam magni illum, aliquid consequatur aperiam fuga eos, excepturi commodi!",
+      "Casas geminadas, com espaços aconchegantes e totalmente planejados. Projeto idealizado conforme o pedido do cliente, com foco em investimento. Além da sala, quartos, banheiro e cozinha, o destaque vai para a área externa, que conta com uma churrasqueira para o lazer da família.",
   },
 ];
 

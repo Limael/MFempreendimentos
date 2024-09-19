@@ -30,11 +30,30 @@ export const housesProjects: HouseProject[] = [
     title: "RESIDENCIAL ROYAL BOULEVARD 1",
     location: "Avenida das Cataratas.",
     deliveryDate: "Junho 2024",
-    description:
-      "Residencial familiar de alto padrão localizado em um condomínio de luxo, perfeito para a comodidade, segurança e bem-estar da família. O projeto dos sonhos que você pode chamar de seu, com cerca de 284 metros de área total.",
+    description: (
+      <>
+        <p>
+          Residencial familiar de alto padrão, localizado em um condomínio de
+          luxo, perfeito para a comodidade, segurança e bem-estar da família. O
+          projeto dos sonhos que você pode chamar de seu, com cerca de 284
+          metros de área total.
+        </p>
+        <ul>
+          <li>1 Suíte Master</li>
+          <li>3 Suítes Tradicionais</li>
+          <li>Sala de Estar</li>
+          <li>Sala de Jantar</li>
+          <li>Espaço Gourmet</li>
+          <li>Lavanderia</li>
+          <li>Lavabo</li>
+          <li>Área externa com piscina</li>
+          <li>Garagem com depósito</li>
+        </ul>
+      </>
+    ),
     builtArea: "1900 m²",
-    numberOfRooms: "10",
-    numberOfBathrooms: "5",
+    numberOfRooms: "4",
+    numberOfBathrooms: "4",
     value: "R$ 2.000.000,00",
   },
   {
@@ -42,11 +61,31 @@ export const housesProjects: HouseProject[] = [
     title: "RESIDENCIAL ROYAL BOULEVARD 2",
     location: "Avenida das Cataratas.",
     deliveryDate: "Junho 2024",
-    description:
-      "Projetada com muita delicadeza, a casa remete a um estilo de vida único e exala requinte e sofisticação. A edificação é composta por 1 suíte master, 3 suítes tradicionais, sala de estar e jantar, espaço gourmet, lavanderia com lavabo, garagem com depósito e área externa com piscina.",
+    description: (
+      <>
+        <p>
+          Projetada com muita delicadeza, esta casa remete a um estilo de vida
+          único e exala requinte e sofisticação. Um projeto exclusivo,
+          idealizado para transformar o sonho de uma família em realidade.
+        </p>
+        <p>Com uma área completa, a residência oferece os seguintes espaços:</p>
+
+        <ul>
+          <li>1 Suíte Master</li>
+          <li>3 Suítes Tradicionais</li>
+          <li>Sala de Estar</li>
+          <li>Sala de Jantar</li>
+          <li>Espaço Gourmet</li>
+          <li>Lavanderia</li>
+          <li>Lavabo</li>
+          <li>Área externa com piscina</li>
+          <li>Garagem com depósito</li>
+        </ul>
+      </>
+    ),
     builtArea: "1900 m²",
-    numberOfRooms: "10",
-    numberOfBathrooms: "5",
+    numberOfRooms: "4",
+    numberOfBathrooms: "4",
     value: "R$ 2.000.000,00",
   },
   {
@@ -84,7 +123,7 @@ export const housesProjects: HouseProject[] = [
           <strong>PRONTA PARA MORAR.</strong>
         </p>
         <p>
-          <em>Não ficam no imóvel móveis soltos.</em>
+          <strong>Não ficam no imóvel móveis soltos.</strong>
         </p>
       </>
     ),
