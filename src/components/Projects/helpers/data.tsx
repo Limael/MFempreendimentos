@@ -19,6 +19,7 @@ import sobrado_moderno_banner from "../../../assets/images/Sobrado moderno/Vila 
 import sobrado_Vila_A_banner from "../../../assets/images/Sobrado Vila A Park/Sobrados_VilaAPark_MFempreendimentos-108.jpg";
 import casa_terrea_banner from "../../../assets/images/Casa Térrea/Banner.jpeg";
 import germina_dos_sonhos_banner from "../../../assets/images/Germina dos Sonhos/Banner.jpeg";
+import alto_padrao_banner from "../../../assets/images/Residencial alto padrão - Royal Boulevard/Marcelo Falchemback_View01.jpg";
 
 const germina_dos_sonhos: { [key: string]: { default: string } } =
   import.meta.glob("../../../assets/images/Germina dos Sonhos/*", {
@@ -105,6 +106,12 @@ const unila: { [key: string]: { default: string } } = import.meta.glob(
 );
 const utfpr: { [key: string]: { default: string } } = import.meta.glob(
   '../../../assets/images/utfpr/*"',
+  {
+    eager: true,
+  }
+);
+const altoPadrao: { [key: string]: { default: string } } = import.meta.glob(
+  '../../../assets/images/Residencial alto padrão - Royal Boulevard/*"',
   {
     eager: true,
   }
@@ -279,6 +286,16 @@ Boulevard em Foz do Iguaçu. Área de intervenção total 25.000m² Construção
     builtArea: "360 m²",
     description:
       "Autenticidade, linhas limpas e marcantes que transmitem sofisticação e modernidade são algumas das características deste sobrado, localizado em um condomínio em Foz do Iguaçu.",
+  },
+  {
+    category: "residenciais",
+    images: altoPadrao,
+    image: alto_padrao_banner,
+    title: "RESIDENCIAL ALTO PADRÃO",
+    location: "Condomínio Residencial Villa Firenze – Foz do Iguaçu",
+    builtArea: "360 m²",
+    description:
+      "Um residencial de dois pisos com uma arquitetura sofisticada e moderna, marcado pelo contraste de cores e vidros espelhados que conferem um toque diferenciado ao projeto. Destaque para a área externa, com piscina ao lado da área gourmet, separadas por portas que integram os espaços. Mais um projeto de alto padrão que atendeu plenamente às demandas do cliente.",
   },
   {
     category: "residenciais",
