@@ -7,6 +7,14 @@ const imagesHouse1: { [key: string]: { default: string } } = import.meta.glob(
     eager: true,
   }
 );
+const casa_terrea_alto_padrao: { [key: string]: { default: string } } =
+  import.meta.glob("../../../assets/images/casa-terrea-alto-padrao/*", {
+    eager: true,
+  });
+const casa_com_edicula: { [key: string]: { default: string } } =
+  import.meta.glob("../../../assets/images/casa-com-edicula/*", {
+    eager: true,
+  });
 const imagesHouse2: { [key: string]: { default: string } } = import.meta.glob(
   "../../../assets/images/casa2/*",
   {
@@ -180,11 +188,71 @@ export const housesProjects: HouseProject[] = [
     deliveryDate: "Junho 2024",
     description: (
       <>
-        Oportunidade para investimento. Terreno sub esquina de frente para o
-        lago, na entrada do loteamento.
+        Casa térrea com alto padrão mobiliada. Um projeto bem distribuído, com
+        ar condicionado em todos os ambientes, com acesso lateral da casa para
+        os fundos, sobra de terreno, churrasqueira, pergolado, jardim, pé
+        direito duplo na sala e cozinha.
       </>
     ),
     builtArea: "10x30, 300m²",
+    numberOfRooms: "2",
+    numberOfBathrooms: "1",
+    value: "R$ 2.000.000,00",
+  },
+  {
+    images: casa_terrea_alto_padrao,
+    title: "CASA TÉRREA DE ALTO PADRÃO - LOTEAMENTO PARQUE DOS PIONEIROS",
+    location: "Parque dos Pioneiros, Rua Angelina Lemos, 464.",
+    deliveryDate: "Junho 2024",
+    description: (
+      <>
+        Oportunidade para investimento. Terreno sub esquina de frente para o
+        lago, na entrada do loteamento.
+        <br />
+        <ul>
+          <li>Garagem ampla para 2 carros cobertos</li>
+          <li>Acesso lateral para os fundos</li>
+          <li>Sala de estar, jantar e cozinha gourmet (pé direito duplo)</li>
+          <li>Suíte com closet</li>
+          <li>2 quartos</li>
+          <li>Banheiro social</li>
+          <li>Lavanderia</li>
+          <li>Churrasqueira nos fundos</li>
+          <li>Pergolado e jardim integrado</li>
+        </ul>
+      </>
+    ),
+    builtArea: "112m²",
+    numberOfRooms: "2",
+    numberOfBathrooms: "1",
+    value: "R$ 2.000.000,00",
+  },
+  {
+    images: casa_com_edicula,
+    title: "CASA COM EDÍCULA COMPLETA - LOTEAMENTO PARQUE DOS PIONEIROS",
+    location: "Parque dos Pioneiros, Rua Angelina Lemos, 464.",
+    deliveryDate: "Junho 2024",
+    description: (
+      <>
+        Casa térrea com alto padrão mobiliada, de interiores executados por
+        completo, ar condicionado em todos os ambientes, sistema fotovoltaico,
+        cerca elétrica, câmeras, com acesso lateral da casa para os fundos,
+        edícula com churrasqueira, jardim, pé direito duplo na sala e cozinha.
+        <br />
+        <ul>
+          <li>Garagem ampla para 2 carros cobertos</li>
+          <li>Acesso lateral para os fundos</li>
+          <li>Sala de estar, jantar e cozinha gourmet (pé direito duplo)</li>
+          <li>Suíte com closet</li>
+          <li>2 quartos</li>
+          <li>Banheiro social</li>
+          <li>Churrasqueira e gourmet nos fundos</li>
+          <li>Lavabo</li>
+          <li>Lavanderia</li>
+        </ul>
+      </>
+    ),
+    builtArea: "137m²",
     numberOfRooms: "2",
     numberOfBathrooms: "1",
     value: "R$ 2.000.000,00",

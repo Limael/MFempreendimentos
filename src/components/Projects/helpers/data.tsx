@@ -322,7 +322,7 @@ Boulevard em Foz do Iguaçu. Área de intervenção total 25.000m² Construção
     category: "residenciais",
     images: germina_dos_sonhos,
     image: germina_dos_sonhos_banner,
-    title: "GERMINADOS DOS SONHOS",
+    title: "GEMINADOS DOS SONHOS",
     location: "Condomínio Royal Boulevard",
     builtArea: "311 m²",
     description:
