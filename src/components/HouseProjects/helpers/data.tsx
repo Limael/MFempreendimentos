@@ -62,6 +62,7 @@ export const housesProjects: HouseProject[] = [
           <li>Lavabo</li>
           <li>Área externa com piscina</li>
           <li>Garagem com depósito</li>
+          <li>Residencial vendida ainda em construção *</li>
         </ul>
       </>
     ),
